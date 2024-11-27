@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BingoSeleccionDePatron {
+    
+    // Muestra un cuadro de diálogo con imágenes y nombres de los patrones disponibles para 
+    // que el jugador seleccione uno. Retorna el número del patrón seleccionado o -1 si se cancela
     public int mostrarDialogo() {
         // Lista de nombres de patrones
         String[] patrones = {

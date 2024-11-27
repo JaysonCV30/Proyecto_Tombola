@@ -24,6 +24,7 @@ public class Tombola_Grafica extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }
     
+    // Relaciona cada número de Bingo con su respectivo componente gráfico (JLabel) en la interfaz
     private void inicializarEtiquetasNumeros() {
         // Relaciona cada número con su correspondiente JLabel
         etiquetasNumeros.put(1, uno);
@@ -104,6 +105,7 @@ public class Tombola_Grafica extends javax.swing.JFrame {
         
     }
     
+    // Actualiza el panel de selección de patrón con la imagen correspondiente al patrón elegido
     public void actualizarImagenPatron(int patron) {
         // Construir la ruta de la imagen usando el número del patrón
         String imagePath = "C:\\Users\\Jayson\\Desktop\\UABC\\Semestre 2024-2\\Programación Orientada a Objetos\\Laboratorio\\Codigo_Practicas\\Proyecto_Tombola\\src\\main\\java\\imagenes\\patron_" + patron + ".png";
@@ -119,6 +121,7 @@ public class Tombola_Grafica extends javax.swing.JFrame {
         patronElegido.repaint();  // Redibujar el panel
     }
     
+    // Verifica si el botón de sacar bola ha sido presionado
     public boolean isBotonPresionado(){
         botonSacarBola.addActionListener(e -> {
             botonPresionado = true; // Cambiar la bandera
@@ -126,18 +129,22 @@ public class Tombola_Grafica extends javax.swing.JFrame {
         return botonPresionado;
     }
     
+    // Reinicia el estado del botón para permitir nuevas interacciones
     public void resetBotonPresionado(){
         botonPresionado = false;
     }
     
+    // Muestra el número de la bola actual en el área correspondiente de la interfaz
     public void actualizarBolaActual(int bola){
         numeroActual.setText(Integer.toString(bola));
     }
     
+    // Muestra el número de la bola anterior en el área correspondiente de la interfaz
     public void actualizarBolaAnterior(int bola){
         numeroAnterior.setText(Integer.toString(bola));
     }
     
+    // Muestra los últimos cinco números extraídos en el panel de números anteriores
     public void actualizarBolasAnteriores(ArrayList <Integer> historial){
         numerosAnteriores.removeAll();
         
@@ -160,6 +167,7 @@ public class Tombola_Grafica extends javax.swing.JFrame {
         numerosAnteriores.repaint();
     }
     
+    // Cambia el color del texto del número extraído en la interfaz para destacarlo
     public void pintarNumero(int numero) {
         // Buscar el JLabel correspondiente al número
         JLabel etiqueta = etiquetasNumeros.get(numero);

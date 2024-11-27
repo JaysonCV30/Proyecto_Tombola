@@ -7,6 +7,8 @@ public class JuegoLogico {
     private Tombola_Grafica tombolaGrafica;
     private Bingo juego;
 
+    // Inicia el juego de Bingo. Configura la interfaz gráfica, selecciona el patrón, saca bolas 
+    // y verifica si alguna carta es ganadora
     public void iniciarJuego() {
         System.out.println("¡Bienvenido al Bingo!");
 
@@ -98,7 +100,8 @@ public class JuegoLogico {
         System.out.println("\n¡Fin del juego! Gracias por jugar.");
     }
 
-    private int mostrarDialogoDePatron() {
+    // Llama al método mostrarDialogo de la clase BingoSeleccionDePatron para obtener el patrón seleccionado
+    public int mostrarDialogoDePatron() {
         // Crear el diálogo con las imágenes
         BingoSeleccionDePatron mostrarPatronDialog = new BingoSeleccionDePatron();
         return mostrarPatronDialog.mostrarDialogo();  // Retorna el número de patrón seleccionado

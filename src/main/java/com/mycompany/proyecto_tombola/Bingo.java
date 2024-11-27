@@ -13,25 +13,32 @@ public class Bingo extends Tombola implements JuegoBingo{
         inicializarCartas();
     }
 
+    // Crea 50 instancias de la clase CartaBingo y las agrega a la lista cards
     public void inicializarCartas() {
         for (int i = 0; i < 50; i++) { 
             cards.add(new CartaBingo());
         }
     }
     
+    // Retorna la lista de cartas del juego
     public ArrayList<CartaBingo> getCards() {
         return cards;
     }
     
+    // Establece el patrón seleccionado por el jugador para el juego
     public void setTipoPatron(int tipoPatron) {
         this.tipoPatron = tipoPatron;
     }
     
+    // Muestra un mensaje para que el jugador elija un patrón y genera 
+    // las bolas necesarias según el patrón seleccionado
     public void configurarPatron() {
         System.out.println("Elija un patron:");
         crearBolas();
     }
     
+    // Genera y mezcla las bolas según el patrón de Bingo seleccionado. 
+    // Los rangos de números varían dependiendo del patrón elegido
     public void crearBolas() {
         bolas.clear(); // Limpiar la lista de bolas previamente generadas
 
@@ -125,6 +132,8 @@ public class Bingo extends Tombola implements JuegoBingo{
         Collections.shuffle(bolas);  // Mezclar las bolas para que salgan en orden aleatorio
     }
     
+    // Extrae la primera bola disponible de la lista bolas, la agrega al historial y la retorna. 
+    // Si no hay bolas disponibles, lanza una excepción
     public int sacarBola() {
         if (bolas.isEmpty()) {
             throw new IllegalStateException("No quedan bolas en la tómbola.");
@@ -134,6 +143,8 @@ public class Bingo extends Tombola implements JuegoBingo{
         return bola;
     }
     
+    // Muestra en consola las bolas extraídas, separadas por las letras correspondientes 
+    // de Bingo (B, I, N, G, O).
     public void mostrarHistorial() {
         // Crear listas separadas para cada letra
         ArrayList<Integer> b = new ArrayList<>();
@@ -157,10 +168,12 @@ public class Bingo extends Tombola implements JuegoBingo{
         System.out.println("O: " + o);
     }
     
+    // Verifica si una carta cumple con el patrón de Bingo utilizando el historial de bolas extraídas
     public boolean verificarCarta(CartaBingo carta) {
         return carta.verificar(historial, tipoPatron);
     }
     
+    // Retorna la lista de bolas extraídas.
     public ArrayList<Integer> getHistorial(){
         return historial;
     }
