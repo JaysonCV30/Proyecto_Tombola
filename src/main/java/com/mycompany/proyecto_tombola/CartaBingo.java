@@ -16,7 +16,7 @@ public class CartaBingo {
         this.carta = carta;
     }
 
-    private void generateCard() {
+    public void generateCard() {
         Random random = new Random();
         for (int columna = 0; columna < 5; columna++) {
             int start = (columna * 15) + 1;
@@ -35,7 +35,7 @@ public class CartaBingo {
         }
     }
 
-    private boolean isNumberInColumn(int columna, int numero) {
+    public boolean isNumberInColumn(int columna, int numero) {
         for (int fila = 0; fila < 5; fila++) {
             if (carta[fila][columna] == numero) {
                 return true;
@@ -142,7 +142,7 @@ public class CartaBingo {
         }
     }
 
-    private boolean verificarColumna(ArrayList<Integer> historial, int columna) {
+    public boolean verificarColumna(ArrayList<Integer> historial, int columna) {
         for (int fila = 0; fila < 5; fila++) {
             // Ignorar el espacio "Free" en la posición central
             if (carta[fila][columna] == 0) {
@@ -155,7 +155,7 @@ public class CartaBingo {
         return true;
     }
 
-    private boolean verificarFila(ArrayList<Integer> historial, int fila) {
+    public boolean verificarFila(ArrayList<Integer> historial, int fila) {
         for (int columna = 0; columna < 5; columna++) {
             // Ignorar el espacio "Free" en la posición central
             if (carta[fila][columna] == 0) {
@@ -168,7 +168,7 @@ public class CartaBingo {
         return true;
     }
 
-    private boolean verificarDiagonalPrincipal(ArrayList<Integer> historial) {
+    public boolean verificarDiagonalPrincipal(ArrayList<Integer> historial) {
         for (int i = 0; i < 5; i++) {
             // Ignorar el espacio "Free" en la posición central
             if (i == 2 && carta[i][i] == 0) {
@@ -181,7 +181,7 @@ public class CartaBingo {
         return true;
     }
 
-    private boolean verificarDiagonalSecundaria(ArrayList<Integer> historial) {
+    public boolean verificarDiagonalSecundaria(ArrayList<Integer> historial) {
         for (int i = 0; i < 5; i++) {
             // Ignorar el espacio "Free" en la posición central
             if (i == 2 && carta[i][i] == 0) {
@@ -194,7 +194,7 @@ public class CartaBingo {
         return true;
     }
 
-    private boolean verificarBloque(ArrayList<Integer> historial, int filaInicio, int filaFin, int colInicio, int colFin) {
+    public boolean verificarBloque(ArrayList<Integer> historial, int filaInicio, int filaFin, int colInicio, int colFin) {
         for (int fila = filaInicio; fila < filaFin; fila++) {
             for (int columna = colInicio; columna < colFin; columna++) {
                 if (carta[fila][columna] == 0) {
@@ -209,7 +209,7 @@ public class CartaBingo {
         return true;
     }
 
-    private boolean verificar8Diamond(ArrayList<Integer> historial) {
+    public boolean verificar8Diamond(ArrayList<Integer> historial) {
         int[][] posiciones = {
             {0, 2}, {1, 1}, {1, 3}, {2, 0}, {2, 4}, {3, 1}, {3, 3}, {4, 2}
         };

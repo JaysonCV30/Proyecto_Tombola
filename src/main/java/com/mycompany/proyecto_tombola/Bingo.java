@@ -2,7 +2,6 @@ package com.mycompany.proyecto_tombola;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
 
 public class Bingo extends Tombola implements JuegoBingo{
     private ArrayList<CartaBingo> cards;
@@ -14,7 +13,7 @@ public class Bingo extends Tombola implements JuegoBingo{
         inicializarCartas();
     }
 
-    private void inicializarCartas() {
+    public void inicializarCartas() {
         for (int i = 0; i < 5; i++) { // Por defecto, se crean 5 cartas
             cards.add(new CartaBingo());
         }
