@@ -10,7 +10,6 @@ public class JuegoLogico {
     public void iniciarJuego() {
         System.out.println("¡Bienvenido al Bingo!");
 
-        // Crear una instancia concreta de Bingo
         juego = new Bingo();
         tombolaGrafica = new Tombola_Grafica();
 
@@ -53,9 +52,7 @@ public class JuegoLogico {
             for (int i = 0; i < juego.getCards().size(); i++) {
                 boolean esGanadora = juego.verificarCarta(juego.getCards().get(i));
                 javax.swing.SwingUtilities.invokeLater(() -> {
-                    //boolean esGanadora = juego.verificarCarta(juego.getCards().get(i));
                     if (esGanadora) {
-                        // Mostrar ventana de "¡Alguien dijo bingo!"
                         int opcion = JOptionPane.showOptionDialog(
                                 tombolaGrafica,
                                 "¡Alguien dijo bingo! ¿Quieres verificar la carta?",
@@ -67,10 +64,7 @@ public class JuegoLogico {
                                 "Verificar Carta"
                         );
 
-                        // Si el usuario selecciona "Verificar Carta"
                         if (opcion == JOptionPane.YES_OPTION) {
-                            //esGanadora = juego.verificarCarta(juego.getCards().get(i)); // Verifica la carta
-
                             // Mostrar resultado de la verificación
                             if (esGanadora) {
                                 JOptionPane.showMessageDialog(

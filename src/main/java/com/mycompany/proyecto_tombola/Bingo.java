@@ -14,7 +14,7 @@ public class Bingo extends Tombola implements JuegoBingo{
     }
 
     public void inicializarCartas() {
-        for (int i = 0; i < 5; i++) { // Por defecto, se crean 5 cartas
+        for (int i = 0; i < 50; i++) { 
             cards.add(new CartaBingo());
         }
     }
@@ -130,7 +130,7 @@ public class Bingo extends Tombola implements JuegoBingo{
             throw new IllegalStateException("No quedan bolas en la tómbola.");
         }
         int bola = bolas.remove(0);
-        agregarAlHistorial(bola); // Usar método de Tombola
+        agregarAlHistorial(bola); 
         return bola;
     }
     

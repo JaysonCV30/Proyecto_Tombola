@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class BingoSeleccionDePatron {
     public int mostrarDialogo() {
-        // Lista de nombres de patrones (puedes agregar los 38 nombres)
+        // Lista de nombres de patrones
         String[] patrones = {
             "Patrón 1", "Patrón 2", "Patrón 3", "Patrón 4", "Patrón 5", "Patrón 6", "Patrón 7", "Patrón 8", "Patrón 9", "Patrón 10", "Patrón 11", 
             "Patrón 12","Patrón 13", "Patrón 14", "Patrón 15", "Patrón 16", "Patrón 17", "Patrón 18", "Patrón 19", "Patrón 20", "Patrón 21", "Patrón 22", 
@@ -16,7 +16,6 @@ public class BingoSeleccionDePatron {
         // Lista de imágenes correspondientes a cada patrón
         ImageIcon[] patronesImages = new ImageIcon[38];
         for (int i = 0; i < 38; i++) {
-            // Carga la imagen correspondiente (asegúrate de que las rutas sean correctas)
             patronesImages[i] = new ImageIcon("C:\\Users\\Jayson\\Desktop\\UABC\\Semestre 2024-2\\Programación Orientada a Objetos\\Laboratorio\\Codigo_Practicas\\Proyecto_Tombola\\src\\main\\java\\imagenes\\patron_" + (i + 1) + ".png");
         }
 
